@@ -5,12 +5,16 @@ package com.example.android.personasmaterialclase;
  */
 
 public class Persona {
+    private String id;
     private int foto;
     private String cedula;
     private String nombre;
     private String apellido;
     private int sexo;
 
+    public Persona(){
+
+    }
     public Persona(int foto, String cedula, String nombre, String apellido, int sexo) {
         this.foto = foto;
         this.cedula = cedula;
@@ -61,7 +65,16 @@ public class Persona {
         return sexo;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public void setSexo(int sexo) {
+
         this.sexo = sexo;
     }
     public void guardar(){
