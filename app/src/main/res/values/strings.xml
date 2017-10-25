@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">PersonasMaterialClase</string>
     <string name="action_settings">Settings</string>
+    <string name="agregar">Agregar</string>
+    <string name="agregarCedula">Agregar cedula</string>
+    <string name="agregarNombre">Agregar nombre</string>
+    <string name="agregarApellido">Agregar apellido</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="Campos_vacios">mensajeErrorVacio</string>
 </resources>
