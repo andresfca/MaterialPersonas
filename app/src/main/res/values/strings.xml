@@ -7,4 +7,5 @@
     <string name="agregarApellido">Agregar apellido</string>
     <string name="cancelar">Cancelar</string>
     <string name="Campos_vacios">mensajeErrorVacio</string>
+    <string name="mensaje_persona_guardada_exitosamente">persona guardada exitosamente!</string>
 </resources>
