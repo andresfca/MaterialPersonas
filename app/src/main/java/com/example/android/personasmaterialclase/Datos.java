@@ -15,7 +15,7 @@ public class Datos {
     private static String bd = "Personas";
     private static ArrayList<Persona> personas = new ArrayList<>();
     public static void guardarPersona(Persona p){
-        p.setId(databaseReference.push().getKey());
+       // p.setId(databaseReference.push().getKey());
         databaseReference.child(bd).child(p.getId()).setValue(p);
     }
     public static ArrayList<Persona> obtenerPersona(){
@@ -24,5 +24,8 @@ public class Datos {
 
     public static void setPersonas(ArrayList<Persona> per){
         personas=per;
+    }
+    public static String getId(){
+        return databaseReference.push().getKey();
     }
 }

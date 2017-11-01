@@ -6,7 +6,7 @@ package com.example.android.personasmaterialclase;
 
 public class Persona {
     private String id;
-    private int foto;
+    private String foto;
     private String cedula;
     private String nombre;
     private String apellido;
@@ -15,25 +15,32 @@ public class Persona {
     public Persona(){
 
     }
-    public Persona(int foto, String cedula, String nombre, String apellido, int sexo) {
+    public Persona(String foto, String cedula, String nombre, String apellido, int sexo) {
         this.foto = foto;
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
         this.sexo = sexo;
     }
-    public Persona(int foto, String cedula, String nombre, String apellido) {
+    public Persona(String foto, String cedula, String nombre, String apellido) {
         this.foto = foto;
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
     }
+    public Persona(String id,String foto, String cedula, String nombre, String apellido) {
+        this.foto = foto;
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.id=id;
+    }
 
-    public int getFoto() {
+    public String getFoto() {
         return foto;
     }
 
-    public void setFoto(int foto) {
+    public void setFoto(String foto) {
         this.foto = foto;
     }
 
