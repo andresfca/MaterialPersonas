@@ -14,6 +14,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 public class Principal extends AppCompatActivity {
@@ -22,6 +28,8 @@ public class Principal extends AppCompatActivity {
     private Resources res;
     private AdaptadorPersona adapter;
     private LinearLayoutManager llm;
+    private DatabaseReference databaseReference;
+    private final String BD="Personas";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +40,8 @@ public class Principal extends AppCompatActivity {
 
         listado = (RecyclerView)findViewById(R.id.lstPersona);
         res = this.getResources();
-        personas = Datos.obtenerPersona();
+        personas = new ArrayList<>();
+        //personas = Datos.obtenerPersona();
        /* personas.add(new Persona(R.drawable.images2,"1140877166","Andres","Cantillo",2));
         personas.add(new Persona(R.drawable.images3,"1234567890","Daniel","Cantillo",2));
         personas.add(new Persona(R.drawable.images,"09876543211","Natalia","Cantillo",2));
@@ -53,6 +62,26 @@ public class Principal extends AppCompatActivity {
         llm = new LinearLayoutManager(this);
         listado.setLayoutManager(llm);
         listado.setAdapter(adapter);
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference.child(BD).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                personas.clear();
+                if (dataSnapshot.exists()){
+                    for(DataSnapshot snapshot:dataSnapshot.getChildren()){
+                        Persona p = snapshot.getValue(Persona.class);
+                        personas.add(p);
+                    }
+                }
+                adapter.notifyDataSetChanged();
+                Datos.setPersonas(personas);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
       //  FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
     }
