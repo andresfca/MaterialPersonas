@@ -27,4 +27,10 @@ public class Metodos {
         }
         return false;
     }
+    public static boolean existencia_Persona(ArrayList<Persona> personas, String cedula){
+        for (int i = 0; i < personas.size(); i++) {
+            if (personas.get(i).getCedula().equalsIgnoreCase(cedula)) return true;
+        }
+        return false;
+    }
 }

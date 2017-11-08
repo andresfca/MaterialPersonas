@@ -28,4 +28,11 @@ public class Datos {
     public static String getId(){
         return databaseReference.push().getKey();
     }
+
+    public static void actualizar(Persona p){
+        databaseReference.child(bd).child(p.getId()).setValue(p);
+    }
+    public static void eliminar(Persona p){
+        databaseReference.child(bd).child(p.getId()).removeValue();
+    }
 }

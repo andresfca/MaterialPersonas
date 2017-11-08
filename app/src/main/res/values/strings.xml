@@ -9,4 +9,13 @@
     <string name="Campos_vacios">mensajeErrorVacio</string>
     <string name="mensaje_persona_guardada_exitosamente">persona guardada exitosamente!</string>
     <string name="mensaje_seleccion_imagen">Seleccione la imagen</string>
+    <string name="modificar">Modificar</string>
+    <string name="modificarCedula">Modificar cedula</string>
+    <string name="modificarNombre">Modificar nombre</string>
+    <string name="modificarApellido">Modificar apellido</string>
+    <string name="Mensaje_error_cedulaExistente">Cedula existente</string>
+    <string name="Mensaje_personaModificada">Persona modificada exitosamente!!</string>
+    <string name="eliminar">¿Está seguro que desea eliminar?</string>
+    <string name="opcionPositiva">si</string>
+    <string name="opcionNegativa">no</string>
 </resources>

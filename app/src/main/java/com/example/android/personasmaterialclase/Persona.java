@@ -35,6 +35,9 @@ public class Persona {
         this.apellido = apellido;
         this.id=id;
     }
+    public Persona(String id){
+        this.id=id;
+    }
 
     public String getFoto() {
         return foto;
@@ -87,4 +90,7 @@ public class Persona {
     public void guardar(){
         Datos.guardarPersona(this);
     }
+
+    public void modificar(){Datos.actualizar(this);}
+    public void eliminar(){Datos.eliminar(this);}
 }
